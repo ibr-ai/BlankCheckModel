@@ -3,7 +3,7 @@ A hierchical diff-eq model and 15,000 Monte Carlo Simulations that demonstrate t
 
 # The End of the Blank Check: Strategic Decoupling of the United States and Israel, 2035 ± 2 Years
 
-**Latest version (December 2025):** [Ibrahim_2025_The_End_of_the_Blank_Check_2035.pdf](Ibrahim_2025_The_End_of_the_Blank_Check.pdf)  
+**Latest version (December 2025):** [Ibrahim_2025_The_End_of_the_Blank_Check.pdf](Ibrahim_2025_The_End_of_the_Blank_Check.pdf)  
 **15,000-run Monte Carlo model** — fully reproducible under MIT License
 
 | Item | Link |
