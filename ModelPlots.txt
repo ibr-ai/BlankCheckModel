@@ -1,0 +1,46 @@
+# These plots are used to produce the deterministic figures behind the model
+# To use these plots just comment out the simulation portion of the main script and paste this below it
+
+# Plot
+years = 2025 + t
+plt.figure(figsize=(12,8))
+
+plt.subplot(2,2,1)
+plt.plot(years, sol[:,4], 'darkred', lw=3)
+plt.title('U.S. Aid to Israel ($B real 2025)')
+plt.axhline(1.0, color='black', ls='--')
+
+plt.subplot(2,2,2)
+plt.plot(years, sol[:,5], 'darkblue', lw=3)
+plt.title('Tel Aviv Price Index (2015=100)')
+plt.axhline(100, color='gray', ls='--')
+
+plt.subplot(2,2,3)
+plt.plot(years, sol[:,3]*100, 'purple', lw=3)
+plt.title('Restraint-Right Vote Share (%)')
+
+# Pre-compute yield at each timestep (trivial)
+yields = []
+for i in range(len(sol)):
+    D = sol[i,0]
+    baseline = np.interp(2025 + t[i], params['year'], params['yield'])
+    risk = 0.09 * np.tanh(3.3 * (D - 1.30))
+    yields.append(min(baseline + risk, 0.15))
+
+plt.subplot(2,2,4)
+plt.plot(years, np.array(yields)*100, 'orange', lw=3)
+plt.axhline(10, color='red', ls='--')
+plt.axhline(14, color='darkred', ls='-')
+legend_elements = [
+    Patch(facecolor='white', edgecolor='#ff4444', ls='--', lw=2,
+          label='10 % – Political Pain Threshold'),
+    Patch(facecolor='white', edgecolor='#aa0000', ls='-', lw=3,
+          label='14 % – Terminal Market Threshold')
+]
+plt.legend(handles=legend_elements, loc='upper left', framealpha=0.95)
+plt.title('Effective U.S. Borrowing Cost (%)', fontsize=14, fontweight='bold')
+plt.ylim(3, 16)
+plt.xlim(2025, 2040)
+
+plt.tight_layout()
+plt.show()
