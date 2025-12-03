@@ -8,6 +8,6 @@ A hierchical diff-eq model and 15,000 Monte Carlo Simulations that demonstrate t
 
 | Item | Link |
 |------|------|
-| Paper (PDF) | [download](Ibrahim_2025_The_End_of_the_Blank_Check_2035.pdf) |
+| Paper (PDF) | [download](Ibrahim_2025_The_End_of_the_Blank_Check.pdf) |
 | Code + data | current directory |
 | Collapse-year histogram | [download](Fig4.png) |
